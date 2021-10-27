@@ -1,113 +1,84 @@
-# LitElement JavaScript starter
+# Lit Framework
 
-This project includes a sample component using LitElement with JavaScript.
+## Framework o librería
 
-## Setup
+Lit es una librería para crear componentes web rápidos y ligeros. Nos aporta un conjunto de funcionalidades que permiten lograr un sistema de plantillas declarativas que son pequeñas y rápidas. Funciona en los navegadores más conocidos como Chrome, Firefox, Edge y Safari.
 
-Install dependencies:
+Cada componente de Lit es un componente web estándar, con los beneficios que ofrecen de interoperabilidad.
 
-```bash
-npm i
-```
 
-## Testing
+## Qué trae “out-of-the-box
 
-This sample modern-web.dev's
-[@web/test-runner](https://www.npmjs.com/package/@web/test-runner) along with
-Mocha, Chai, and some related helpers for testing. See the
-[modern-web.dev testing documentation](https://modern-web.dev/docs/test-runner/overview) for
-more information.
+Si queremos definir un componente, se implementa como un custom element, y se registra la clase con el navegador. Es decir, se registra una clase custom element con el navegador y se asocia con el nombre de un elemento. 
 
-Tests can be run with the `test` script, which will run your tests against Lit's development mode (with more verbose errors) as well as against Lit's production mode:
+Cuando se define un componente en Lit, se está definiendo un elemento HTML custom.
+
+Por ejemplo:
 
 ```bash
-npm test
+@customElement('simple-greeting')
+export class SimpleGreeting extends LitElement { /* ... */ }
 ```
 
-For local testing during development, the `test:dev:watch` command will run your tests in Lit's development mode (with verbose errors) on every change to your source files:
+A su vez, se cuenta con un método de render, para renderizar los contenidos del componente. Acá es donde se define un template para este componente. Esto se tiene que hacer en HTML dentro de “``” esas comillas, usando la función tag html. También se puede incluir contenido JavaScript.
+
+return html`<p>Hello from my template.</p>`;
+
+
+## Nivel de mantenimiento y comunidad
+
+Debido a que dentro de las librerías web, no es de las más utilizadas, se cuenta con una comunidad relativamente baja en comparación con otras más conocidas. Además de StackOverflow, mediante el uso de tags como `lit-element` o `lit-html`, hay un canal de Slack abierto a la comunidad llamado “Lit & Friends” que cuenta con canales para principiantes y las diferentes herramientas que se utilizan. También utilizan su cuenta de Twitter para publicar sus novedades respecto a Lit y los web components.
+
+También cuentan con un repositorio general en git abierto al público que se actualiza constantemente. La última actualización es la 2.0.2, liberada 19 días atrás.
+
+| Framework o librerías  | Consultas en stackoverflow |
+| ---------------------- | --------------------------:|
+| Angular                | 264805                     |
+| React                  | 339901                     |
+| Svelte                 | 2270                       |
+| Vue                    | 85596                      |
+| Lit                    | 58                         |
+| Alpine                 | 417                        |
+
+
+## Curva de aprendizaje
+Al hablar de curva de aprendizaje nos referimos a una gráfica que describa qué tan complicado puede ser aprender algo y cuanto nos puede llevar obtener resultados al esfuerzo que estamos destinado para aprender algo.
+
+Si bien como mencionamos en el punto anterior, lit no cuenta con un gran apoyo a la comunidad, su arquitectura termina teniendo un gran parecido a otros frameworks (Ya sea Angular o React). Se basa en la utilización de Web Components para el creado de elementos personalizados para que podamos extender nuestro HTML.
+
+Lit, tiene su base en estándares conocidos como lo son low WebComponents para el creado de elementos personalizados que nos permiten extender nuestro HTML. También se hacen utilizaciones de LitElements que son una clase para la creación de Customs Elements.
+
+Como podemos ver, Lit no trae grandes conceptos nuevos por lo que no consideramos que la curva de aprendizaje sea alta.
+
+### Readme
+
+Para poder comenzar un proyecto (habiendo inicializado el proyecto) con lit, solamente tendremos que correr el siguiente código:
 
 ```bash
-npm test:watch
+npm i lit
+npm i lit-element
 ```
 
-Alternatively the `test:prod` and `test:prod:watch` commands will run your tests in Lit's production mode.
+Con ello ya podremos comenzar con nuestro proyecto.
 
-## Dev Server
-
-This sample uses modern-web.dev's [@web/dev-server](https://www.npmjs.com/package/@web/dev-server) for previewing the project without additional build steps. Web Dev Server handles resolving Node-style "bare" import specifiers, which aren't supported in browsers. It also automatically transpiles JavaScript and adds polyfills to support older browsers. See [modern-web.dev's Web Dev Server documentation](https://modern-web.dev/docs/dev-server/overview/) for more information.
-
-To run the dev server and open the project in a new browser tab:
+Para crear un nuevo elemento, creamos una carpeta y creamos un archivo type script.
 
 ```bash
-npm run serve
+import {html, css, LitElement} from 'lit';
+import {customElement, property} from 'lit/decorators.js'; // en el caso que se utilice Typescript
+
+@customElement('simple-greeting')
+export class hola-mundo extends LitElement {
+ static styles = css`p { color: blue }`;
+
+ @property()
+ destinatario= 'Clase';
+ 
+ render() {
+   return html`<p>Hola, ${this.destinatario}!</p>`;
+ }
 ```
 
-There is a development HTML file located at `/dev/index.html` that you can view at http://localhost:8000/dev/index.html. Note that this command will serve your code using Lit's development mode (with more verbose errors). To serve your code against Lit's production mode, use `npm run serve:prod`.
+vemos como nuestro nuevo elemento en vez de depender de HTMLElements, extiende de Lit Element. Habiendo hecho esto, podemos llamar a nuestro nuevo elemento desde cualquier clase HTML. Para esto el único requerimiento es llamar desde la página deseada al archivo typescript que queremos utilizar.
 
-## Editing
-
-If you use VS Code, we highly reccomend the [lit-plugin extension](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin), which enables some extremely useful features for lit-html templates:
-
-- Syntax highlighting
-- Type-checking
-- Code completion
-- Hover-over docs
-- Jump to definition
-- Linting
-- Quick Fixes
-
-The project is setup to reccomend lit-plugin to VS Code users if they don't already have it installed.
-
-## Linting
-
-Linting of JavaScript files is provided by [ESLint](eslint.org). In addition, [lit-analyzer](https://www.npmjs.com/package/lit-analyzer) is used to type-check and lint lit-html templates with the same engine and rules as lit-plugin.
-
-The rules are mostly the recommended rules from each project, but some have been turned off to make LitElement usage easier. The recommended rules are pretty strict, so you may want to relax them by editing `.eslintrc.json`.
-
-To lint the project run:
-
-```bash
-npm run lint
-```
-
-## Formatting
-
-[Prettier](https://prettier.io/) is used for code formatting. It has been pre-configured according to the Lit's style. You can change this in `.prettierrc.json`.
-
-Prettier has not been configured to run when commiting files, but this can be added with Husky and and `pretty-quick`. See the [prettier.io](https://prettier.io/) site for instructions.
-
-## Static Site
-
-This project includes a simple website generated with the [eleventy](11ty.dev) static site generator and the templates and pages in `/docs-src`. The site is generated to `/docs` and intended to be checked in so that GitHub pages can serve the site [from `/docs` on the master branch](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
-
-To enable the site go to the GitHub settings and change the GitHub Pages &quot;Source&quot; setting to &quot;master branch /docs folder&quot;.</p>
-
-To build the site, run:
-
-```bash
-npm run docs
-```
-
-To serve the site locally, run:
-
-```bash
-npm run docs:serve
-```
-
-To watch the site files, and re-build automatically, run:
-
-```bash
-npm run docs:watch
-```
-
-The site will usually be served at http://localhost:8000.
-
-## Bundling and minification
-
-This starter project doesn't include any build-time optimizations like bundling or minification. We recommend publishing components as unoptimized JavaScript modules, and performing build-time optimizations at the application level. This gives build tools the best chance to deduplicate code, remove dead code, and so on.
-
-For information on building application projects that include LitElement components, see [Build for production](https://lit.dev/docs/tools/production/) on the LitElement site.
-
-## More information
-
-See [Get started](https://lit.dev/docs/getting-started/) on the Lit site for more information.
+`<hola-mundo></hola-mundo>`
