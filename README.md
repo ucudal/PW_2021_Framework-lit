@@ -29,19 +29,6 @@ Los componentes web son un conjunto de API de plataforma web que le permiten cre
 - Los componentes web funcionan en cualquier lugar donde se utilice HTML, con cualquier framework. Esto hace que Lit sea ideal para crear componentes compatibles, sistemas de diseño y aplicaciones fáciles de mantener.
 - Los componentes sirven para mejorar progresivamente un sitio estático o crear una aplicación completa. Al adoptar los componentes web, Lit minimiza el bloqueo y promueve la capacidad de mantenimiento: actualice o migre un componente a la vez, sin interrumpir el desarrollo del producto.
 
-### Scoped styles
-
-Lit usa sus estilos de forma predeterminada, utilizando Shadow DOM . Esto mantiene sus selectores de CSS simples y asegura que los estilos de su componente no afecten, y no se vean afectados por ningún otro estilo en la página.
-
-### Reactive properties
-
-Se pueden declarar propiedades reactivas para modelar la API y el estado interno de su componente. Un componente Lit se vuelve a renderizar de manera eficiente cada vez que cambia una propiedad reactiva (o el atributo HTML correspondiente).
-
-### Declarative templates
-
-Las plantillas Lit, basadas en literales de plantilla etiquetadas , son simples, expresivas y rápidas, con marcado HTML con expresiones nativas de JavaScript en línea. No es necesario aprender una sintaxis personalizada, no se requiere compilación.
-
-
 Si queremos definir un componente, se implementa como un custom element, y se registra la clase con el navegador. Es decir, se registra una clase custom element con el navegador y se asocia con el nombre de un elemento. 
 
 Cuando se define un componente en Lit, se está definiendo un elemento HTML custom.
@@ -57,6 +44,17 @@ A su vez, se cuenta con un método de render, para renderizar los contenidos del
 
 `return html <p>Hello from my template.</p>`;
 
+### Scoped styles
+
+Lit usa sus estilos de forma predeterminada, utilizando Shadow DOM . Esto mantiene sus selectores de CSS simples y asegura que los estilos de su componente no afecten, y no se vean afectados por ningún otro estilo en la página.
+
+### Reactive properties
+
+Se pueden declarar propiedades reactivas para modelar la API y el estado interno de su componente. Un componente Lit se vuelve a renderizar de manera eficiente cada vez que cambia una propiedad reactiva (o el atributo HTML correspondiente).
+
+### Declarative templates
+
+Las plantillas Lit, basadas en literales de plantilla etiquetadas , son simples, expresivas y rápidas, con marcado HTML con expresiones nativas de JavaScript en línea. No es necesario aprender una sintaxis personalizada, no se requiere compilación.
 
 ## Nivel de mantenimiento y comunidad
 
