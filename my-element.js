@@ -43,7 +43,7 @@ export class MyElement extends LitElement {
 
   constructor() {
     super();
-    this.name = 'World';
+    this.name = 'Web';
     this.count = 0;
   }
 
@@ -51,7 +51,7 @@ export class MyElement extends LitElement {
     return html`
       <h1>${this.sayHello(this.name)}!</h1>
       <button @click=${this._onClick} part="button">
-        Click Count: ${this.count}
+        Click County: ${this.count}
       </button>
       <slot></slot>
     `;
@@ -68,7 +68,7 @@ export class MyElement extends LitElement {
    * @returns {string} A greeting directed at `name`
    */
   sayHello(name) {
-    return `Hello, ${name}`;
+    return `Hello, Programación ${name}`;
   }
 }
 
