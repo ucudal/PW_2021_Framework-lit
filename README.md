@@ -46,7 +46,7 @@ Al hablar de curva de aprendizaje nos referimos a una gráfica que describa qué
 
 Si bien como mencionamos en el punto anterior, lit no cuenta con un gran apoyo a la comunidad, su arquitectura termina teniendo un gran parecido a otros frameworks (Ya sea Angular o React). Se basa en la utilización de Web Components para el creado de elementos personalizados para que podamos extender nuestro HTML.
 
-Lit, tiene su base en estándares conocidos como lo son low WebComponents para el creado de elementos personalizados que nos permiten extender nuestro HTML. También se hacen utilizaciones de LitElements que son una clase para la creación de Customs Elements.
+Lit, tiene su base en estándares conocidos como lo son los WebComponents para el creado de elementos personalizados que nos permiten extender nuestro HTML. También se hacen utilizaciones de LitElements que son una clase para la creación de Customs Elements.
 
 Como podemos ver, Lit no trae grandes conceptos nuevos por lo que no consideramos que la curva de aprendizaje sea alta.
 
