@@ -68,7 +68,7 @@ import {html, css, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js'; // en el caso que se utilice Typescript
 
 @customElement('simple-greeting')
-export class hola-mundo extends LitElement {
+export class SimpleGreeting extends LitElement {
  static styles = css`p { color: blue }`;
 
  @property()
