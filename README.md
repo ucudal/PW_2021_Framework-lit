@@ -9,6 +9,39 @@ Cada componente de Lit es un componente web estándar, con los beneficios que of
 
 ## Qué trae “out-of-the-box
 
+### Sencillo
+
+Sobre la base de los estándares de componentes web, Lit agrega:
+- Reactividad
+- Plantillas declarativas 
+- Características para reducir la repetición y facilitar el trabajo.
+
+### Rápido
+
+Con un peso de alrededor de 5 KB ayuda a mantener un tiempo de carga corto. 
+Renderizado es increíblemente rápido, porque Lit toca solo las partes dinámicas de su interfaz de usuario cuando se actualiza, sin necesidad de reconstruir un árbol virtual y diferenciarlo con el DOM.
+
+### Componentes Web
+
+Los componentes web son un conjunto de API de plataforma web que le permiten crear nuevas etiquetas HTML encapsuladas, reutilizables y personalizadas para usar en páginas web y aplicaciones web. Los componentes y widgets personalizados creados en los estándares de componentes web funcionarán en los navegadores modernos y se pueden usar con cualquier biblioteca o marco de JavaScript que funcione con HTML.
+
+- Cada componente de Lit es un componente web nativo, con el superpoder de la interoperabilidad. 
+- Los componentes web funcionan en cualquier lugar donde se utilice HTML, con cualquier framework. Esto hace que Lit sea ideal para crear componentes compatibles, sistemas de diseño y aplicaciones fáciles de mantener.
+- Los componentes sirven para mejorar progresivamente un sitio estático o crear una aplicación completa. Al adoptar los componentes web, Lit minimiza el bloqueo y promueve la capacidad de mantenimiento: actualice o migre un componente a la vez, sin interrumpir el desarrollo del producto.
+
+### Scoped styles
+
+Lit usa sus estilos de forma predeterminada, utilizando Shadow DOM . Esto mantiene sus selectores de CSS simples y asegura que los estilos de su componente no afecten, y no se vean afectados por ningún otro estilo en la página.
+
+### Reactive properties
+
+Se pueden declarar propiedades reactivas para modelar la API y el estado interno de su componente. Un componente Lit se vuelve a renderizar de manera eficiente cada vez que cambia una propiedad reactiva (o el atributo HTML correspondiente).
+
+### Declarative templates
+
+Las plantillas Lit, basadas en literales de plantilla etiquetadas , son simples, expresivas y rápidas, con marcado HTML con expresiones nativas de JavaScript en línea. No es necesario aprender una sintaxis personalizada, no se requiere compilación.
+
+
 Si queremos definir un componente, se implementa como un custom element, y se registra la clase con el navegador. Es decir, se registra una clase custom element con el navegador y se asocia con el nombre de un elemento. 
 
 Cuando se define un componente en Lit, se está definiendo un elemento HTML custom.
@@ -22,7 +55,7 @@ export class SimpleGreeting extends LitElement { /* ... */ }
 
 A su vez, se cuenta con un método de render, para renderizar los contenidos del componente. Acá es donde se define un template para este componente. Esto se tiene que hacer en HTML dentro de “``” esas comillas, usando la función tag html. También se puede incluir contenido JavaScript.
 
-return html`<p>Hello from my template.</p>`;
+`return html <p>Hello from my template.</p>`;
 
 
 ## Nivel de mantenimiento y comunidad
