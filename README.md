@@ -27,9 +27,11 @@ return html`<p>Hello from my template.</p>`;
 
 ## Nivel de mantenimiento y comunidad
 
-Debido a que dentro de las librerías web, no es de las más utilizadas, se cuenta con una comunidad relativamente baja en comparación con otras más conocidas. Además de StackOverflow, mediante el uso de tags como `lit-element` o `lit-html`, hay un canal de Slack abierto a la comunidad llamado “Lit & Friends” que cuenta con canales para principiantes y las diferentes herramientas que se utilizan. También utilizan su cuenta de Twitter para publicar sus novedades respecto a Lit y los web components.
+Debido a que dentro de las librerías web, no es de las más utilizadas, se cuenta con una comunidad relativamente baja en comparación con otras más conocidas. Además de StackOverflow, mediante el uso de tags como `lit-element` o `lit-html`, hay un canal de Slack abierto a la comunidad llamado `Lit & Friends` que cuenta con canales para principiantes y las diferentes herramientas que se utilizan. También utilizan su cuenta de Twitter para publicar sus novedades respecto a Lit y los web components.
 
 También cuentan con un repositorio general en git abierto al público que se actualiza constantemente. La última actualización es la 2.0.2, liberada 19 días atrás.
+
+Abajo se puede observar una tabla comparativa de diferentes librerías o frameworks y la cantidad de consultas en StackOverflow.
 
 | Framework o librerías  | Consultas en stackoverflow |
 | ---------------------- | --------------------------:|
